@@ -1,0 +1,12 @@
+{
+  "name": "wp-house-reserve",
+  "version": "1.0.0",
+  "description": "Its a reserve plugin for wordpress",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "diaz web app",
+  "license": "ISC"
+}

@@ -1,0 +1,114 @@
+#ventana *{
+    box-sizing: border-box;
+    margin:0;
+}
+#ventana{
+    background: white;
+    border-radius: 10px;
+    position:relative;
+    overflow: hidden;
+    width:100%;
+    min-width:250px;
+    max-width: 500px;
+    height: auto;
+    margin:auto;
+    box-shadow: 0px 0px 15px 3px rgba(0,0,0,.3);
+    padding:10px;
+    box-sizing: border-box;
+}
+
+.btn_calendario{
+    display: flex;
+    justify-content: space-around;
+}
+
+
+#ventana button{
+    color: whitesmoke;
+    padding: 5px 15px;
+    border: none;
+    margin: 20px auto;
+    background:rgb(17, 105, 236);
+}
+#ventana .button-danger{
+    background:rgb(236, 79, 17);
+}
+#ventana label{
+    font-weight: bolder;
+    line-height: 3;
+}
+.container_calendar{
+    display:grid;
+    grid-template-columns: repeat(1,1fr);
+    gap:10px;
+}
+.step_1,.step_2,.step_3{
+    min-height: 100%;
+    padding: 5px;
+}
+.step_2,.step_3{
+    transition: all .3s ease;
+    position: absolute;
+    top:0;left:-120vw;right:0;bottom:0;
+    height:100%;
+    width:calc(100% - 10px);
+    background: rgba(255,255,255, .8);
+    backdrop-filter: blur(2px);
+}
+.step_1 input,.step_1 textarea{
+    width: 100%;
+    display: block;
+    border-color: rgba(0, 0, 0, .3);
+    padding: 5px 10px;
+
+}
+.step_2{
+    place-content: unset;
+    text-align: center;
+    place-items: unset;
+}
+.step_3 label, .step_3 h2,.step_3 ul li{
+    color:black;
+}
+.step_2 h2,.step_3 h2{
+    padding:10px 0;
+    text-align:center;
+}
+.step_3 ul li{
+    padding:3px;
+}
+.precio{
+    text-align: center;
+    line-height: 3;
+    font-weight: bolder;
+}
+
+.step_show{
+    left: 5px ;
+}
+.wp_house_reserve_loader{
+    position: absolute;
+    top:calc(50% - 25px);left:calc(50% - 100px);
+    width:200px;height:50px;
+    z-index: 3;
+    transition: all .3s ease;
+    background: rgba(0, 0, 0, .8);
+    color:white;
+    display: grid;
+    place-content: center;
+    place-items: center;
+    font-weight: bold;
+}
+.wp_house_reserve_loader_disabled{
+    left:-100%;
+}
+
+.tavo-calendar__info{
+    display: flex !important;
+    justify-content: space-around;
+    align-items: center;
+}
+.tavo-calendar__info span{
+    font-size: 18px;
+    margin-top: 15px;
+}
