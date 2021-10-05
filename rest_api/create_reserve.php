@@ -21,8 +21,6 @@ function end_point_wp_houses_reserve_create_reserve(WP_REST_Request $request){
         'post_title' => $params->factura->tarifa,
         'post_type' => 'reservas'
     );
-    // se solicitan los emails de adminitradores
-    $query_mails = $wpdb->get_results( "SELECT * FROM {$wpdb->prefix}reserves_system_emails_admin " );
 
     //Se insertan los datos
     $new_post_id = wp_insert_post($args);
@@ -56,16 +54,18 @@ function end_point_wp_houses_reserve_create_reserve(WP_REST_Request $request){
     ];
     $email_body = email_body($data);
 
-    //$headers = "From:" . "erickofici"
-    wp_mail($params->cliente->correo, "Su reserva a sido creada con éxito", $email_body );
+    $headers = "From:" . "jesus medina"
+    wp_mail($params->cliente->correo, "Su reserva a sido creada con éxito", $email_body, $headers );
 
+    // se solicitan los emails de adminitradores
+    $query_mails = $wpdb->get_results( "SELECT * FROM {$wpdb->prefix}reserves_system_emails_admin " );
     $emails_admin = [];
 
-    for($data=0; $data < count($registros); $data++):
-        $emails_admin[$data] = $registros[$data]->email ; 
+    for($data=0; $data < count($query_mails); $data++):
+        $emails_admin[$data] = $query_mails[$data]->email ; 
     endfor;
 
-    wp_mail($emails_admin, "Se ha realizado una reserva", $email_body );
+    wp_mail($emails_admin, "Se ha realizado una reserva", $email_body, $headers );
     
     $response = json_encode(["status"=>"ok"]);
     // devolvemos los datos en decodificando el json
