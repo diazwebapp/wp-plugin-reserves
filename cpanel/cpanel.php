@@ -43,7 +43,7 @@ function funct_cpanel_ui(){ ?>
         <section >
 
 			<article id="ventana_reservas" >
-				<h2>Tablero de reservas <?php echo get_bloginfo( 'name' ) ." ". get_bloginfo( 'admin_email' ) ?> </h2> 
+				<h2>Tablero de reservas <?php echo get_bloginfo( 'admin_email' ) ?> </h2> 
 				<hr>
 				<?php
 					forms_reservas();
