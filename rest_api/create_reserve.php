@@ -54,7 +54,7 @@ function end_point_wp_houses_reserve_create_reserve(WP_REST_Request $request){
     ];
     $email_body = email_body($data);
 
-    $headers = "From:" . "jesus medina"
+    $headers = "From:" . "jesus medina";
     wp_mail($params->cliente->correo, "Su reserva a sido creada con éxito", $email_body, $headers );
 
     // se solicitan los emails de adminitradores
